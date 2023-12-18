@@ -1,6 +1,35 @@
 # ECAMP
 The official implementation of "ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training"
 
+![framework](figs/main.jpg)
+
+## Installation
+Clone this repository:
+```
+git clone https://github.com/ToniChopp/ECAMP.git
+```
+Install Python dependencies:
+```
+conda env create -f environment.yml
+```
+
+## Resource fetching
+As of now, we exclusively offer pre-training code, focusing solely on illustrating the process of retrieving MIMIC-CXR data
+
+- **MIMIC-CXR**: We downloaded the [MIMIC-CXR-JPG](https://physionet.org/content/mimic-cxr-jpg/2.0.0/) dataset as the radiographs. Paired medical reports can be downloaded in [MIMIC-CXR](https://physionet.org/content/mimic-cxr/2.0.0/mimic-cxr-reports.zip).
 
 
-Our pre-trained model can be found [here](https://drive.google.com/file/d/17aV3JQWXe9cPyaBhOraCWOYFzYl4kTsu/view?usp=drive_link).
+You can download ViTB/16 checkpoint [here](https://drive.google.com/file/d/17R2kjHPc9KE8jtuUarfnLvcsgNQMldOt/view?usp=drive_link) for pretraining.  
+Our pre-trained model can be found [here](https://drive.google.com/file/d/1Tnj38eXDqKQAzuonaHeKhaWtpJFF7hwh/view?usp=drive_link).
+
+
+## Pre-training
+The **distilled report and attention weights** will be released **as soon as our paper is accepted**, but you can still use the original radiographs and report for pre-training.  
+We pre-train ECAMP on MIMIC-CXR using this command:
+```
+cd ECAMP/ECAMP/Pre-training
+chmod a+x run.sh
+./run.sh
+```
+Note that it is flexible to develop other pre-training models under this framework.  
+Hope you enjoy!
