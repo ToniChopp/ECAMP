@@ -1,5 +1,6 @@
 # ECAMP
-The official implementation of "ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training"
+The official implementation of "ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training".  
+Our paper can be found [here](https://arxiv.org/abs/2312.13316)
 
 ![framework](figs/main.jpg)
 
