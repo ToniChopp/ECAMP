@@ -33,4 +33,20 @@ chmod a+x run.sh
 ./run.sh
 ```
 Note that it is flexible to develop other pre-training models under this framework.  
+
+
+## Reference
+If you have found our work valuable for your research, we kindly suggest that you acknowledge and cite our contribution(s) by referencing:
+
+```
+@misc{wang2023ecamp,
+      title={ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training}, 
+      author={Rongsheng Wang and Qingsong Yao and Haoran Lai and Zhiyang He and Xiaodong Tao and Zihang Jiang and S. Kevin Zhou},
+      year={2023},
+      eprint={2312.13316},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
 Hope you enjoy!
