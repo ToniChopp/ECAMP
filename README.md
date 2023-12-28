@@ -3,6 +3,7 @@ The official implementation of "ECAMP: Entity-centered Context-aware Medical Vis
 Our paper can be found [here](https://arxiv.org/abs/2312.13316)
 
 ![framework](figs/main.jpg)
+Some code is borrowed from [MAE](https://github.com/facebookresearch/mae), [huggingface](https://huggingface.co/) and [MRM](https://github.com/RL4M/MRM-pytorch)
 
 ## Installation
 Clone this repository:
