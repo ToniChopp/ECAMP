@@ -207,7 +207,11 @@ def main(args):
     if global_rank == 0 and args.log_dir is not None:
         os.makedirs(args.log_dir, exist_ok=True)
         log_writer = SummaryWriter(log_dir=args.log_dir)
+
+        if os.path.exists(os.path.join(args.output_dir, args.job_dir)):
+            shutil.rmtree(os.path.join(args.output_dir, args.job_dir))
         shutil.copytree('./', os.path.join(args.output_dir, args.job_dir))
+        
         print("Finish logging")
     else:
         log_writer = None
