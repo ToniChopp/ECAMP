@@ -75,6 +75,8 @@ def get_args_parser():
 
     parser.add_argument('--lr', type=float, default=None, metavar='LR',
                         help='learning rate (absolute lr)')
+    parser.add_argument('--min_lr', type=float, default=0., metavar='LR',
+                        help='lower lr bound for cyclic schedulers that hit 0')
 
     parser.add_argument('--warmup_epochs', type=int, default=40, metavar='N',
                         help='epochs to warmup LR')
