@@ -24,6 +24,8 @@ As of now, we exclusively offer pre-training code, focusing solely on illustrati
 You can download ViTB/16 checkpoint [here](https://drive.google.com/file/d/17R2kjHPc9KE8jtuUarfnLvcsgNQMldOt/view?usp=drive_link) for pretraining.  
 Our pre-trained model can be found [here](https://drive.google.com/file/d/1Tnj38eXDqKQAzuonaHeKhaWtpJFF7hwh/view?usp=drive_link).
 
+**New:** our LLM distilled reports have been released. You can fetch them [here](https://drive.google.com/file/d/17A-whrZZsDdiNV-qr2myeKiWx1n0BK6p/view?usp=drive_link)
+
 
 ## Pre-training
 The **distilled report and attention weights** will be released **as soon as our paper is accepted**, but you can still use the original radiographs and report for pre-training.  
