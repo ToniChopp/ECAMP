@@ -283,7 +283,7 @@ dependencies:
     - thinc==8.1.7
     - threadpoolctl==2.1.0
     - tifffile==2020.9.3
-    - timm==0.3.2
+    - timm==0.4.12
     - tokenizers==0.10.3
     - tomli==1.2.3
     - torch==1.8.0+cu111
