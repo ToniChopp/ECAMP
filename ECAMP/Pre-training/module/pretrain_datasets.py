@@ -192,7 +192,7 @@ class ContextBertDataset(Dataset):
 
  
     def read_csv(self):
-        csv_path = os.path.join(self.data_root, 'mimic-cxr-2.0.0-MRM-entity-llm.csv')
+        csv_path = os.path.join(self.data_root, 'mimic-cxr-2.0.0-entity-llm.csv')
         attn_csv_path = os.path.join(self.data_root, 'mimic-cxr-2.0.0-attn-label.csv')
         df = pd.read_csv(csv_path, sep=',')
         df_attn = pd.read_csv(attn_csv_path, sep=',')

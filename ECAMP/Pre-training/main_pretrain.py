@@ -18,7 +18,6 @@ from torch.optim import AdamW
 
 import timm
 
-assert timm.__version__ == "0.3.2"  # version check
 import timm.optim.optim_factory as optim_factory
 
 import util.misc as misc
@@ -51,7 +50,9 @@ def get_args_parser():
     parser.add_argument('--description', type=str, default='ecamp_pretrain')
     parser.add_argument('--batch_size', default=256, type=int,
                         help='Batch size per GPU (effective batch size is batch_size * accum_iter * # gpus')
-    parser.add_argument('--epochs', default=200, type=int)
+    parser.add_argument('--epochs', default=115, type=int,
+                        help='Number of training epochs')
+    parser.add_argument('--max_epoch', default=200, type=int)
     parser.add_argument('--accum_iter', default=2, type=int,
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
