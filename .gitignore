@@ -1,3 +1,5 @@
 *.csv
 *.pth
 output/
+.gitignore
+test.sh
