@@ -7,7 +7,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 OMP_NUM_THREADS=1 python -m torch.distributed.launc
     --model ecamp \
     --norm_pix_loss \
     --mask_ratio 0.75 \
-    --epochs 115 \
+    --epochs 120 \
     --warmup_epochs 40 \
     --lr 1.5e-4 --weight_decay 0.05 \
     --resume ./dataset/mae_vit_base.pth \
