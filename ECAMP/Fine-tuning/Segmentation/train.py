@@ -108,13 +108,6 @@ def setup(args):
             decode_features=[512, 256, 128, 64]
         )
 
-        # model = SegViT(
-        #     patch_size = 16,
-        #     out_channels=1,
-        #     hidden_size=768,
-        #     num_hidden_layers=12,
-        #     num_attention_heads=12
-        # )
 
         if args.stage=="train":
             checkpoint = torch.load(args.pretrained_path, map_location=torch.device('cpu'))
@@ -238,8 +231,7 @@ def valid(args, model, writer, val_loader, global_step):
                           dynamic_ncols=True,
                           disable=args.local_rank not in [-1, 0])
 
-    prob_list = []
-    label_list = []
+    
     for step, batch in enumerate(epoch_iterator):
         batch = tuple(t.to(args.device) for t in batch)
         x, y = batch

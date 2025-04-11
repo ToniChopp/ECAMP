@@ -76,6 +76,17 @@ CUDA_VISIBLE_DEVICES=7 python train.py --name ecamp --stage train --model vit_ba
 ```
 You can change ```--task``` to set specific dataset for segmentation, where 3 datasets are available: SIIM, RSNA and RIGA. The ```--data_volume``` parameter can be set to identify the fraction of training data for fine-tuning.
 
+
+### Detection
+We evaluate fine-tuning detection performance of our model using this command:
+```
+CUDA_VISIBLE_DEVICES=7 python train.py --name ecamp --stage train --model vit_base_patch16 --task RSNA --img_size 224 \
+    --pretrained_path '$PATH TO ECAMP_ViT_Base_16.pth' --dataset_path '$PATH TO RSNA/' \
+    --output_dir "output/RSNA/1/" --data_volume '1' --num_steps 3000  --eval_batch_size 512 \
+    --learning_rate 3e-4 --warmup_steps 50 --fp16 --fp16_opt_level O2 --train_batch_size 96 --weight_decay 0.05
+```
+
+
 ## Reference
 If you have found our work valuable for your research, we kindly suggest that you acknowledge and cite our contribution(s) by referencing:
 
