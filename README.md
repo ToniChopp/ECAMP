@@ -1,6 +1,6 @@
 # ECAMP
-The official implementation of "ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training".  
-Our paper can be found [here](https://arxiv.org/abs/2312.13316)
+The official implementation of "ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training".  (Medical Image Analysis 2025)
+Our paper can be found [here](https://www.sciencedirect.com/science/article/pii/S1361841525002373)
 
 ![framework](figs/main.jpg)
 Some code is borrowed from [MAE](https://github.com/facebookresearch/mae), [huggingface](https://huggingface.co/) and [MRM](https://github.com/RL4M/MRM-pytorch)
@@ -23,7 +23,7 @@ We offer the pre-training and fine-tuning code of ECAMP, whose contribution is *
 
 
 You can download ViTB/16 checkpoint [here](https://drive.google.com/file/d/17R2kjHPc9KE8jtuUarfnLvcsgNQMldOt/view?usp=drive_link) for pretraining.  
-Our pre-trained model can be found [here](https://drive.google.com/file/d/1Tnj38eXDqKQAzuonaHeKhaWtpJFF7hwh/view?usp=drive_link).
+Our pre-trained model can be found [here](https://drive.google.com/file/d/1Tnj38eXDqKQAzuonaHeKhaWtpJFF7hwh/view?usp=drive_link) for evaluating.
 
 Our distilled reports by LLM have been released. You can fetch them [here](https://drive.google.com/file/d/1I8Q8-sPnLb-kbD93wbCfZ4S_-xdBL3Md/view?usp=sharing)
 
