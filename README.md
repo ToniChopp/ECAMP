@@ -91,13 +91,18 @@ CUDA_VISIBLE_DEVICES=7 python train.py --name ecamp --stage train --model vit_ba
 If you have found our work valuable for your research, we kindly suggest that you acknowledge and cite our contribution(s) by referencing:
 
 ```
-@misc{wang2023ecamp,
-      title={ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training}, 
-      author={Rongsheng Wang and Qingsong Yao and Haoran Lai and Zhiyang He and Xiaodong Tao and Zihang Jiang and S. Kevin Zhou},
-      year={2023},
-      eprint={2312.13316},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{WANG2025ECAMP,
+title = {ECAMP: Entity-centered Context-aware Medical Vision Language Pre-training},
+journal = {Medical Image Analysis},
+volume = {105},
+pages = {103690},
+year = {2025},
+issn = {1361-8415},
+doi = {https://doi.org/10.1016/j.media.2025.103690},
+url = {https://www.sciencedirect.com/science/article/pii/S1361841525002373},
+author = {Rongsheng Wang and Qingsong Yao and Zihang Jiang and Haoran Lai and Zhiyang He and Xiaodong Tao and S. Kevin Zhou},
+keywords = {Medical Vision-language Pre-training, Masked Modeling, Cross-modality Learning},
+abstract = {Despite significant advancements in medical vision-language pre-training, existing methods have largely overlooked the inherent linguistic complexity and imbalanced issue within medical reports, as well as the complex cross-modality contextual relationships between texts and images. To close this gap, we propose a novel Entity-centered Context-aware Medical Vision-language Pre-training (ECAMP) framework, which establishes a more entity-centered, context-sensitive, and balanced understanding of medical reports to effectively pre-train the vision encoder. We first distill entity-centered context from medical reports utilizing large language models, enabling ECAMP to draw more precise supervision from the text modality. By further incorporating entity-aware re-balanced factor and descriptor masking strategies into masked language modeling, ECAMP significantly enhances the knowledge of entities within the reports. A context-guided super-resolution task is proposed alongside a multi-scale context fusion design to improve the semantic integration of both coarse and fine-level image representations, which prompts better performance for multi-scale downstream applications. ECAMP integrates these innovations together, leading to significant performance leaps over current state-of-the-art methods and establish a new standard for cross-modality pre-training in medical imaging. The effectiveness of ECAMP is demonstrated by extensive experiments on various domains and organs, which achieves cutting-edge results on multiple tasks including classification, segmentation, and detection across 5 public chest X-ray and 4 fundoscopy datasets respectively.}
 }
 ```
 
