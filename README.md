@@ -58,7 +58,7 @@
 
 Despite significant advancements in medical vision-language pre-training, existing methods have largely overlooked the inherent linguistic complexity and imbalanced issue within medical reports, as well as the complex cross-modality contextual relationships between texts and images. To close this gap, we propose a novel Entity-centered Context-aware Medical Vision-language Pre-training (ECAMP) framework, which establishes a more entity-centered, context-sensitive, and balanced understanding of medical reports to effectively pre-train the vision encoder. We first distill entity-centered context from medical reports utilizing large language models, enabling ECAMP to draw more precise supervision from the text modality. By further incorporating entity-aware re-balanced factor and descriptor masking strategies into masked language modeling, ECAMP significantly enhances the knowledge of entities within the reports. A context-guided super-resolution task is proposed alongside a multi-scale context fusion design to improve the semantic integration of both coarse and fine-level image representations, which prompts better performance for multi-scale downstream applications. ECAMP integrates these innovations together, leading to significant performance leaps over current state-of-the-art methods and establish a new standard for cross-modality pre-training in medical imaging. The effectiveness of ECAMP is demonstrated by extensive experiments on various domains and organs, which achieves cutting-edge results on multiple tasks including classification, segmentation, and detection across 5 public chest X-ray and 4 fundoscopy datasets respectively.
 
-![teaser](figs/intro.jpg)
+<!-- ![teaser](figs/intro.jpg) -->
 
 
 ## Installation
