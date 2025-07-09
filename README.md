@@ -60,6 +60,7 @@ Despite significant advancements in medical vision-language pre-training, existi
 
 ![teaser](figs/teaser.jpg)
 
+
 ## Installation
 Clone this repository:
 ```
