@@ -121,11 +121,17 @@ def setup(args):
         args.is_multilabel = True
 
     num_classes = args.num_classes
+
+    if args.stage == "train":
+        drop_ratio = 0.1
+    else:
+        drop_ratio = 0.0
     
     model = models_vit.__dict__[args.model](
         num_classes=num_classes,
-        drop_path_rate=0.1,
+        drop_path_rate=drop_ratio,
         global_pool=True,
+        mode=args.mode,
     )
     if args.stage=='train':
         checkpoint = torch.load(args.pretrained_path, map_location=torch.device('cpu'))

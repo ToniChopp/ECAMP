@@ -21,6 +21,42 @@ import ml_collections
 import ipdb
 
 
+class SSLEvaluator(nn.Module):
+    def __init__(self, n_input, n_classes, n_hidden=None, p=0.1) -> None:
+        super().__init__()
+        self.n_input = n_input
+        self.n_classes = n_classes
+        self.n_hidden = n_hidden
+        if self.n_hidden is None:
+            self.block_forward = nn.Sequential(
+                Flatten(),
+                nn.Dropout(p=p),
+                nn.Linear(n_input, n_classes)
+            )
+        else:
+            self.block_forward = nn.Sequential(
+                Flatten(),
+                nn.Dropout(p=p),
+                nn.Linear(n_input, n_hidden, bias=False),
+                nn.BatchNorm1d(n_hidden),
+                nn.ReLU(inplace=True),
+                nn.Dropout(p=p),
+                nn.Linear(n_hidden, n_classes)
+            )
+
+    def forward(self, x):
+        logits = self.block_forward(x)
+        return logits
+
+
+class Flatten(nn.Module):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def forward(self, input_tensor):
+        return input_tensor.view(input_tensor.size(0), -1)
+
+
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
@@ -60,10 +96,13 @@ class PatchEmbed(nn.Module):
 class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
     """ Vision Transformer with support for global average pooling
     """
-    def __init__(self, global_pool=False, **kwargs):
+    def __init__(self, global_pool=True, mode="LinearProbe", drop_path_rate=0.1, **kwargs):
         super(VisionTransformer, self).__init__(**kwargs)
 
         self.global_pool = global_pool
+        self.mode = mode
+        self.drop_ratio = drop_path_rate
+
         if self.global_pool:
             norm_layer = kwargs['norm_layer']
             embed_dim = kwargs['embed_dim']
@@ -73,6 +112,13 @@ class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
 
         # del self.patch_embed
         # self.patch_embed = PatchEmbed(224, 16, 3, self.embed_dim)
+        
+        if self.mode == "LinearProbe":
+            self.head = SSLEvaluator(
+                n_input=embed_dim,
+                n_classes=self.num_classes,
+                p=self.drop_ratio,
+                n_hidden=embed_dim)
 
 
     def forward_features(self, x):
@@ -86,6 +132,9 @@ class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
 
         for blk in self.blocks:
             x = blk(x)
+        
+        if self.mode == "LinearProbe":
+            return x
 
         if self.global_pool:
             # print("global_pool")
@@ -96,6 +145,27 @@ class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
             outcome = x[:, 0]
 
         return outcome
+    
+
+    def forward(self, x):
+        x = self.forward_features(x)
+        # GAP
+        if self.mode == "LinearProbe":
+            x = x[:, 1:, :].mean(dim=1)
+            # CLS token
+            # x = x[:, 0, :]
+            x = self.head(x)
+        else:
+            if self.head_dist is not None:
+                x, x_dist = self.head(x[0]), self.head_dist(x[1])  # x must be a tuple
+                if self.training and not torch.jit.is_scripting():
+                    # during inference, return the average of both classifier predictions
+                    return x, x_dist
+                else:
+                    return (x + x_dist) / 2
+            else:
+                x = self.head(x)
+        return x
 
 
 def get_b16_config():
