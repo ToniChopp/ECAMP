@@ -45,7 +45,7 @@
 <br>
 <br>
 
-​[![MedIA](https://img.shields.io/badge/MedIA-2025.103690-red)](https://www.sciencedirect.com/science/article/pii/S1361841525002373?dgcid=coauthor)   [![github](https://img.shields.io/badge/github-ECAMP-orange)](https://github.com/FengheTan9/LLM4Seg)    <a href="#LICENSE--citation"><img alt="License: MIT license" src="https://img.shields.io/badge/LICENSE-MIT-blue.svg"/></a>
+​[![MedIA](https://img.shields.io/badge/MedIA-2025.103690-red)](https://www.sciencedirect.com/science/article/pii/S1361841525002373?dgcid=coauthor)   [![github](https://img.shields.io/badge/github-ECAMP-orange)](https://github.com/ToniChopp/ECAMP)    <a href="#LICENSE--citation"><img alt="License: MIT license" src="https://img.shields.io/badge/LICENSE-MIT-blue.svg"/></a>
 
 
 
