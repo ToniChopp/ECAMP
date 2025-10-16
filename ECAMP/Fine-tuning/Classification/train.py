@@ -151,7 +151,12 @@ def setup(args):
         # assert set(msg.missing_keys) == {'head.weight', 'head.bias'}
 
         # manually initialize fc layer
-        trunc_normal_(model.head.weight, std=2e-5)
+        if args.mode == "Finetune":
+            trunc_normal_(model.head.weight, std=2e-5)
+        elif args.mode == "LinearProbe":
+            for layer in model.head.modules():
+                if isinstance(layer, nn.Linear):
+                    trunc_normal_(layer.weight, std=2e-5)
     else:
         if args.is_multilabel:
             args.pretrained_path = os.path.join(args.output_dir, "%s_bestauc_checkpoint.bin" % args.name)
