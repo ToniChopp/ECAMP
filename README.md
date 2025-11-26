@@ -84,6 +84,7 @@ Our pre-trained model can be found [here](https://drive.google.com/file/d/1Tnj38
 
 Our distilled reports by LLM have been released. You can fetch them [here](https://drive.google.com/file/d/1I8Q8-sPnLb-kbD93wbCfZ4S_-xdBL3Md/view?usp=sharing)
 
+The `mimic-cxr-2.0.0-attn-label.csv` has been released. You can fetch it [here](https://drive.google.com/file/d/1_sv46Mh8vKS7MWgfeAcaZJDvbbMVpmft/view?usp=sharing)
 
 ## Pre-training
 We pre-train ECAMP on MIMIC-CXR using this command:
