@@ -28,17 +28,17 @@ class RSNADetectionDataset(Dataset):
 
         if self.split == "train":
             if self.data_volume == "1":
-                train_data_path = "./RSNA/train_list_1.csv"
+                train_data_path = "./datasets/RSNA/train_list_1.csv"
             elif self.data_volume == "10":
-                train_data_path = "./RSNA/train_list_10.csv"
+                train_data_path = "./datasets/RSNA/train_list_10.csv"
             else:
-                train_data_path = "./RSNA/train_list.csv"
+                train_data_path = "./datasets/RSNA/train_list.csv"
             data_label_csv = train_data_path
         elif self.split == "val":
-            val_data_path = "./RSNA/val_list.csv"
+            val_data_path = "./datasets/RSNA/val_list.csv"
             data_label_csv = val_data_path
         else:
-            test_data_path = "./RSNA/val_list.csv"
+            test_data_path = "./datasets/RSNA/val_list.csv"
             data_label_csv = test_data_path
         print("data_label_csv: ", data_label_csv)
         
